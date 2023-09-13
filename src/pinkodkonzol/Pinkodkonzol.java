@@ -28,14 +28,14 @@ public class Pinkodkonzol {
     }
 
     private static void kodMegadasa(int kod) {
-        int index = 1;
+        int index = 2;
         boolean joE = false;
         System.out.print("kérem a belépési kódot(1/3): ");
         int belep = sc.nextInt();
-        while(!joE && index < 3)
+        while(!joE && index < 4)
         {    
             System.out.println("Hibás pinkód!");
-            System.out.print("kérem a belépési kódot(1/3): ");
+            System.out.print("kérem a belépési kódot("+index+"/3): ");
             belep = sc.nextInt();
             if (belep == kod) {
                 joE = true;
