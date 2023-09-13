@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class Pinkodkonzol {
 
-    private static final Scanner sc = new Scanner(System.in);
+    private final static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         int pinkod = pinkod();
         kodMegadasa(pinkod);
+
     }
 
     private static int pinkod() {
@@ -32,19 +33,19 @@ public class Pinkodkonzol {
         boolean joE = false;
         System.out.print("kérem a belépési kódot(1/3): ");
         int belep = sc.nextInt();
-        while(!joE && index < 4)
-        {    
-            System.out.println("Hibás pinkód!");
-            System.out.print("kérem a belépési kódot("+index+"/3): ");
-            belep = sc.nextInt();
+        while (!joE && index < 4) {
             if (belep == kod) {
+                System.out.println("Rendben sikeres belépés");
                 joE = true;
+            } else {
+                System.out.println("Hibás pinkód!");
+                System.out.print("kérem a belépési kódot(" + index + "/3): ");
+                belep = sc.nextInt();
             }
-            
+
             index++;
         }
-        
-    }
 
+    }
 
 }
